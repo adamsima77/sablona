@@ -58,7 +58,13 @@
       <section class="container">
         <div class="row">
           <div class="col-100 text-center">
-              <p><strong><em>Elit culpa id mollit irure sit. Ex ut et ea esse culpa officia ea incididunt elit velit veniam qui. Mollit deserunt culpa incididunt laborum commodo in culpa.</em></strong></p>
+          <?php echo "<h1>Hello world</h1>";
+          
+          echo "Dnes je " . date("d.m.Y") . "<br>";
+          echo "Aktuálny čas je " . date("H:i:s") . "<br>";
+          ?>
+          
+          
           </div>
         </div>
       </section>
