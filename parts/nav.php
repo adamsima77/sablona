@@ -1,3 +1,6 @@
+<?php
+$theme = isset($_GET['theme']) ? $_GET['theme'] : 'light';
+?>
 <header class="container main-header">
         <div>
           <a href="index.php">
@@ -6,6 +9,8 @@
         </div>
       <nav class="main-nav">
         <ul class="main-menu" id="main-menu">
+      
+            <li><a href = <?php echo $theme === 'dark' ? "?theme=light": "?theme=dark";?>>Zmena témy</a>
             <li><a href="index.php">Domov</a></li>
             <li><a href="portfolio.php">Portfólio</a></li>
             <li><a href="qna.php">Q&A</a></li>

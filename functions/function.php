@@ -42,3 +42,35 @@ function obrazky($jsonFile) {
     echo '</section>';  
 }
 ?>
+
+
+
+
+<?php
+/*Implementácia funkcie pre zmenu štýlu na tmavý
+Pri zatlačení tlačidla sa vymenia štýly v header.php*/
+function Zmenatemy(){
+
+    $theme = isset($_GET['theme']) ? $_GET['theme'] : 'light';
+    if($theme === 'dark'){
+
+        echo '<link rel="stylesheet" type="text/css" href="css/dark.css">';
+
+
+    } else{
+
+      
+        echo '<link rel="stylesheet" type="text/css" href="css/accordion.css">';
+        echo '<link rel="stylesheet" type="text/css" href="css/banner.css">';
+        echo '<link rel="stylesheet" type="text/css" href="css/form.css">';
+        echo '<link rel="stylesheet" type="text/css" href="css/portfolio.css">';
+        echo '<link rel="stylesheet" type="text/css" href="css/slider.css">';
+        echo '<link rel="stylesheet" type="text/css" href="css/style.css">';
+
+    }
+
+
+}
+
+
+?>

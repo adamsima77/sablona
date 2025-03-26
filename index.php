@@ -1,6 +1,6 @@
 <?php include_once "parts/header.php"?>
 <?php include "parts/nav.php" ?>
-<?php include "functions/function.php"?>
+
     
     <main>
     

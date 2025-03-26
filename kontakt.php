@@ -2,7 +2,7 @@
 <?php include "parts/nav.php" ?>
   <main>
     <section class="banner">
-      <div class="container text-white">
+      <div class="container_1 text-white">
         <h1>Kontakt</h1>
       </div>
     </section>
