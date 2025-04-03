@@ -1,5 +1,8 @@
 <?php include_once "parts/header.php"?>
 <?php include "parts/nav.php" ?>
+<?php include_once "class/qna.php"; ?>
+<?php use otazkyodpovede\Qna?>
+
   <main>
     <section class="banner">
       <div class="container_1 text-white">
@@ -13,14 +16,25 @@
         </div>
       </div>
       <section class="container">  
-      <?php include "otazky.php"; ?>    
-      <?php for ($i = 0; $i < count($otazky); $i++) { 
-        ?>     
+  
+       
+        <?php 
+              //Vytvorenie nového objektu a volanie metód
+              $qna = new Qna();
+              $qna->insertQnA();
+              $otazky_odpovede = $qna->vypisQna()
+        ?>
+        
+       
+        <?php
+        //Výpis otázok a odpovedí
+        foreach($otazky_odpovede as $a):?>
         <div class="accordion">            
-        <div class="question"><?php echo $otazky[$i]; ?></div>           
-        <div class="answer"><?php echo $odpovede[$i]; ?></div>     
-       </div>    <?php
-        } ?>
+        <div class="question"><?php echo $a['otazka'];?></div>           
+        <div class="answer"><?php echo $a['odpoved'] ?></div>     
+        
+       </div>    
+       <?php endforeach; ?>
        
       </section>
 
