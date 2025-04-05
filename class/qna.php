@@ -1,36 +1,21 @@
 <?php
 namespace otazkyodpovede;
-require_once('config/config.php');
+use database\Database;
+require_once('class/database.php');
+error_reporting(E_ALL);
+ini_set("display errors", "On");
 define('__ROOT__', dirname(dirname(__FILE__)));
-USE PDO;
-
-
-class Qna{
-
-    private $conn;
-    public function __construct(){
-        $this->connect();
 
 
 
-    }
-  
-    private function connect() {
-        
-        $config = DATABASE;
-        $options = array(
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, 
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, 
-        );
-        try {
-        $this->conn = new PDO('mysql:host=' . $config['HOST'] . ';dbname=' .$config['DBNAME'] . 
-        ';port=' . $config['PORT'], $config['USER_NAME'], $config['PASSWORD'], $options);        
-        } catch (PDOException $e) {
-            
-            die("Chyba pripojenia: " . $e->getMessage());}    
+class Qna extends Database{
 
-    }
+   protected $conn;
 
+   public function __construct(){
+      $this->connect();
+      $this->conn = $this->get_connection();
+   }
 
     public function insertQnA() {
         try {
@@ -80,8 +65,13 @@ class Qna{
 
     //Výpis údajov z databázy
     public function vypisQna(){
-        $this->connect();
 
+        if($this -> conn == null){
+
+             $this->connect();
+             $this->conn = $this->get_connection();
+
+        }
         $sql = "SELECT DISTINCT * FROM qna";
         $statement = $this->conn->prepare($sql);
         $statement->execute();

@@ -31,7 +31,8 @@
   "otazky": [
     "Aké sú vaše služby?",
     "Ako môžem kontaktovať podporu?",
-    "Aké technológie používate pri vývoji webových stránok?"
+    "Aké technológie používate pri vývoji webových stránok?",
+    "Aké sú hlavné výhody a nevýhody používania frameworkov v PHP, ako sú Laravel alebo Symfony, v porovnaní s čistým PHP kódom?"
     
     
   ],
@@ -39,7 +40,9 @@
   "odpovede": [
     "Ponúkame tvorbu webových stránok, optimalizáciu SEO a správu obsahu.",
     "Môžete nás kontaktovať prostredníctvom e-mailu alebo telefonicky cez kontaktný formulár.",
-    "Používame moderné technológie ako HTML5, CSS3, JavaScript a PHP."
+    "Používame moderné technológie ako HTML5, CSS3, JavaScript a PHP.",
+    "Tieto frameworky majú veľké komunity, čo znamená prístup k množstvu dokumentácie, návodov, balíčkov a foriem pomoci, čo môže výrazne uľahčiť riešenie problémov."
+    
      
   ]
 }
